@@ -1,0 +1,26 @@
+.alert.alert-dismissable.alert-success
+  .button.close type="button" data-dismiss="alert"×
+  strong Well done!
+  span  You have successfully started
+  a.alert-link href="javascript:void(0)"  a new Bluesquare app
+
+ul.breadcrumb
+  li.active= render_breadcrumbs separator:' / '
+  li.pull-right= l(Time.now)
+
+
+
+.panel.panel-default
+  .panel-body
+    h1= t('hello')
+    h4
+      | Don't forget to
+      .btn.btn-primary Boom
+.panel.panel-default.shadow-z-2
+  .panel-body
+    =link_to('Material Boostrap Demos','http://fezvrasta.github.io/bootstrap-material-design/bootstrap-elements.html', class: "btn btn-info btn-raised")
+i.icon.icon-material-favorite
+
+button.btn.btn-fab.btn-raised.btn-primary
+  i.mdi-image-edit
+  .ripple-wrapper

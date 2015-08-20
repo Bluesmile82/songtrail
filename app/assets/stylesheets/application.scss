@@ -1,0 +1,23 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-material-design";
+@import "font-awesome";
+
+
+h1{
+  color: black;
+}
+.main{
+  padding-top: 5em;
+}
+
+.navbar-right{
+  margin-right: 20px;
+}
+
+.logo{
+  color:lightgrey;
+  a:hover{
+    text-decoration: none;
+  }
+}
