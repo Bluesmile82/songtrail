@@ -1,9 +1,9 @@
-nav.navbar.navbar-default.navbar-fixed-top.navbar-material-indigo-900 role="navigation"
+nav.navbar.navbar-default.navbar-fixed-top.navbar role="navigation"
   div.navbar-container
     div.navbar-header
       = link_to( root_path , class: 'navbar-brand') do
-        i.icon.mdi-action-language
-        span  Bluesquare Template
+        i.icon.mdi-image-audiotrack
+        span  Songtrail
         .ripple-wrapper
       button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
         span class="icon-bar"
@@ -20,7 +20,7 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-material-indigo-900 role="navi
           - else
             li
               = link_to( language.upcase, locale: language )
-        li= link_to('Projects', 'javascript:void(0)')
+        li= link_to('Songs', 'javascript:void(0)')
         li.dropdown
           a.dropdown-toggle href="#" data-target="#" data-toggle="dropdown" aria-expanded="false"
             span Dropdown

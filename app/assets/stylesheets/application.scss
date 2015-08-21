@@ -6,7 +6,7 @@
 
 
 h1{
-  color: black;
+  color: white;
 }
 .main{
   padding-top: 5em;
@@ -21,4 +21,9 @@ h1{
   a:hover{
     text-decoration: none;
   }
+}
+
+.backing-track{
+  height: 50em;
+  width: 50%;
 }
