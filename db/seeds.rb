@@ -10,6 +10,7 @@ Song.create([{
   title: 'Fly me to the moon',
   key: 'C',
   tempo: 165,
+  style: 'Jazz',
   backing_track: 'http://www.youtube.com/v/watch?v=Z_5v7FjHS58',
   lyrics: "Fly me to the moon\n
 Let me play among the stars\n

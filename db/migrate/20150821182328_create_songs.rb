@@ -9,6 +9,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :tab
       t.string :backing_track
       t.string :completeness
+      t.string :style
       t.text :lyrics
 
       t.timestamps null: false

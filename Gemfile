@@ -37,6 +37,8 @@ gem 'puma'
 gem 'figaro'
 gem 'google-analytics-rails'
 
+gem "jazz_model"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

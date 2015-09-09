@@ -11,7 +11,7 @@
           th Times
           th Key
           th Tempo
-          th Tab
+          th Style
           th Completeness
           th
           th
@@ -21,10 +21,10 @@
           tr
             td = link_to song.title , song, class: 'btn btn-primary'
             td = song.author
-            td = song.times
+            td = song.times || 0
             td = song.key
             td = song.tempo
-            td = song.tab
+            td = song.style
             td
               .progress
                 .progress-bar style="width:#{song.completeness}%;"

@@ -4,6 +4,7 @@ p#notice = notice
     ul.nav.nav-pils
       li.pull-right.active.badge= "#{@song.times || 0} times"
       li.pull-right.badge= @song.key
+      li.pull-right.badge= @song.style
       li.pull-right.active.badge= "#{@song.tempo} bpm"
     = link_to 'Edit', edit_song_path(@song), class: 'btn btn-warning pull-right'
     = link_to 'Back', songs_path, class: 'btn btn-info pull-right'
@@ -17,4 +18,5 @@ p#notice = notice
     - @song.lyrics.each_line do |line|
       p= line
 
-
+- times = @song.times ? @song.times.to_i + 1 : 1
+- @song.update(times: times)

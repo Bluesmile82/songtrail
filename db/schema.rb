@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150821182328) do
     t.string   "tab"
     t.string   "backing_track"
     t.string   "completeness"
+    t.string   "style"
     t.text     "lyrics"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

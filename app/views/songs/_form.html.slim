@@ -19,6 +19,10 @@
         = f.text_field :key, class: "form-control"
     .field.form-group
       .control-label
+        = f.label :style
+        = f.text_field :style, class: "form-control"
+    .field.form-group
+      .control-label
         = f.label :tempo
         = f.text_field :tempo, class: "form-control"
     .field.form-group
@@ -29,6 +33,10 @@
       .control-label
         = f.label :lyrics
         = f.text_area :lyrics, class: "form-control"
+    .field.form-group
+      .control-label
+        = f.label :backing_track
+        = f.text_field :backing_track, class: "form-control"
     .field.form-group
       .control-label
         = f.label :completeness
