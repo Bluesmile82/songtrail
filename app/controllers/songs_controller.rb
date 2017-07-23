@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
   def index
-    @songs = Song.all.sort
+    @songs = Song.all.sort_by{ |song| song.title }
   end
 
   def show
