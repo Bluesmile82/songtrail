@@ -19,6 +19,9 @@ class SongsController < ApplicationController
 
     respond_to do |format|
       if @song.save
+        song_params[:playlist_ids].each do |playlist_id|
+          PlaylistSong.find_or_create_by(playlist_id: playlist_id, song_id: @song.id)
+        end
         format.html { redirect_to @song, notice: 'Song was successfully created.' }
         format.json { render :show, status: :created, location: @song }
       else
@@ -29,14 +32,18 @@ class SongsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @song.update(song_params)
-        format.html { redirect_to @song, notice: 'Song was successfully updated.' }
-        format.json { render :show, status: :ok, location: @song }
-      else
-        format.html { render :edit }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
+    song_params[:playlist_ids].each do |playlist_id|
+      PlaylistSong.find_or_create_by(playlist_id: playlist_id, song_id: @song.id)
+    end
+
+    if @song.update(song_params)
+      p song_params
+      p song_params
+      p song_params
+      p song_params
+      redirect_to @song, notice: 'Song was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -54,6 +61,6 @@ class SongsController < ApplicationController
     end
 
     def song_params
-      params.require(:song).permit(:title, :author, :times, :key, :tempo, :tab, :lyrics, :completeness, :backing_track, :style)
+      params.require(:song).permit(:title, :author, :times, :key, :tempo, :tab, :lyrics, :completeness, :backing_track, :style, :playlist_ids => [])
     end
 end

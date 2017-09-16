@@ -1,0 +1,17 @@
+.panel.panel-primary
+  .panel-heading
+    h1 Listing playlists
+
+  .panel-body
+    table.table
+      thead
+        tr
+          th Title
+
+      tbody
+        - @playlists.each do |playlist|
+          tr
+            td = link_to playlist.name , playlist, class: 'btn btn-primary'
+    br
+
+    = link_to 'New Playlist', new_playlist_path, class: 'btn btn-info'

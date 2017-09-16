@@ -1,0 +1,13 @@
+  = form_for @playlist , class: 'form' do |f|
+    - if @playlist.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@playlist.errors.count, "error")} prohibited this song from being saved:"
+        ul
+          - @playlist.errors.full_messages.each do |message|
+            li = message
+    .field.form-group
+      .control-label
+        = f.label :name
+        = f.text_field :name, class: "form-control"
+    = f.submit action, class: 'btn btn-primary'
+    = link_to 'Back', songs_path, class: 'btn btn-info '

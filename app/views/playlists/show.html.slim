@@ -1,0 +1,41 @@
+p#notice = notice
+.panel.panel-primary
+  .panel-heading
+    = link_to 'Edit', edit_playlist_path(@playlist), class: 'btn btn-warning pull-right'
+    = link_to 'Back', playlists_path, class: 'btn btn-info pull-right'
+    h1= @playlist.name
+  .panel-body
+    - if @songs
+      table.table
+        thead
+              tr
+                th Title
+                th Author
+                th Times
+                th Key
+                th Tempo
+                th Style
+                th Completeness
+                th
+                th
+
+        tbody
+          - @songs.each do |song|
+            tr
+              td = link_to song.title , song, class: 'btn btn-primary'
+              td = song.author
+              td = song.times || 0
+              td = song.key
+              td = song.tempo
+              td = song.style
+              td
+                .progress
+                  .progress-bar style="width:#{song.completeness}%;"
+              td = link_to edit_song_path(song) do
+                button.btn.btn-fab.btn-raised.btn-warning.btn-fab-mini
+                  i.mdi-image-edit
+                  .ripple-wrapper
+              td = link_to song, data: {:confirm => 'Are you sure?'}, :method => :delete do
+                button.btn.btn-fab.btn-raised.btn-danger.btn-fab-mini
+                  i.mdi-action-delete
+                  .ripple-wrapper

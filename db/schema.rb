@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821182328) do
+ActiveRecord::Schema.define(version: 20170916105440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "playlist_songs", force: :cascade do |t|
+    t.integer  "playlist_id"
+    t.integer  "song_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "playlist_songs", ["playlist_id"], name: "index_playlist_songs_on_playlist_id", using: :btree
+  add_index "playlist_songs", ["song_id"], name: "index_playlist_songs_on_song_id", using: :btree
+
+  create_table "playlists", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "songs", force: :cascade do |t|
     t.string   "title"
@@ -29,6 +45,10 @@ ActiveRecord::Schema.define(version: 20150821182328) do
     t.text     "lyrics"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "playlist_id"
   end
 
+  add_index "songs", ["playlist_id"], name: "index_songs_on_playlist_id", using: :btree
+
+  add_foreign_key "songs", "playlists"
 end
