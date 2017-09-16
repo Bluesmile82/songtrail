@@ -15,8 +15,9 @@
         = f.text_field :author, class: "form-control"
     .field.form-group
       .control-label
-        = f.collection_select(:playlist_ids, Playlist.all, :id, :name,
-                              {:selected => @song.playlist_ids, :include_blank => false},
+        = f.label :playlists
+      = f.collection_select(:playlist_ids, Playlist.all, :id, :name,
+                              {:selected => @song.playlist_ids, :include_blank => true},
                               {:multiple => true})
     .field.form-group
       .control-label
