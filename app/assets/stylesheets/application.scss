@@ -25,5 +25,18 @@ h1{
 
 .backing-track{
   height: 50em;
-  width: 50%;
+  width: 100%;
+
+  @media only screen and (max-width: 600px) {
+    width: 50%;
+  }
+}
+
+.lyrics {
+  width: 100%;
+
+  @media only screen and (max-width: 600px) {
+    float: left;
+    width: 50%;
+  }
 }

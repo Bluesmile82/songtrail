@@ -14,7 +14,7 @@ p#notice = notice
       .progress-bar.progress-bar-info style="width:#{@song.completeness}%;"
   .panel-body
     iframe.backing-track name='backing_track' src="https://www.youtube.com/embed/#{@song.backing_track}"
-    h4 Lyrics
+    h4.lyrics Lyrics
     - @song.lyrics.each_line do |line|
       p= line
 
