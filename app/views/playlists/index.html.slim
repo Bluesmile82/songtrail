@@ -11,7 +11,7 @@
       tbody
         - @playlists.each_with_index do |playlist, index|
           tr
-            td = "#{index + 1} - #{link_to playlist.name , playlist, class: 'btn btn-primary'}"
+            td = link_to "#{index + 1} - #{playlist.name}" , playlist, class: 'btn btn-primary'
     br
 
     = link_to 'New Playlist', new_playlist_path, class: 'btn btn-info'
