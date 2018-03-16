@@ -22,7 +22,7 @@ p#notice = notice
         tbody
           - @songs.each do |song|
             tr
-              td = link_to song.title , song, class: 'btn btn-primary'
+              td = link_to "#{index + 1} - #{song.title}" , song, class: 'btn btn-primary'
               td = song.author
               td = song.times || 0
               td = song.key
