@@ -20,7 +20,7 @@ p#notice = notice
                 th
 
         tbody
-          - @songs.each do |song|
+          - @songs.each_with_index do |song|
             tr
               td = link_to "#{index + 1} - #{song.title}" , song, class: 'btn btn-primary'
               td = song.author
